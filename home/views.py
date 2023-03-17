@@ -49,11 +49,11 @@ def studentsignup(request):
 
 def signin(request):
     if request.method == 'POST':
-        username = request.method.POST.get('uname')
-        password = request.method.POST.get('Pass')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request.user)
+            login(request, user)
             if user.is_staff:
                 return redirect('admindashboard')
             if user.is_teacher:
@@ -66,3 +66,7 @@ def signin(request):
         else:
             messages.info(request, 'Invalid Credentials')
     return render(request, 'signin.html')
+
+
+def index(request):
+    pass

@@ -5,7 +5,8 @@ from django.urls import path
 from home import views, adminviews
 
 urlpatterns = [
-    path('signin', views.signin, name='signin'),
+
+    path('', views.signin, name='signin'),
     path('registrationbase', views.registrationbase, name='registrationbase'),
     path('teachersignup', views.teachersignup, name='teachersignup'),
     path('studentsignup', views.studentsignup, name='studentsignup'),
@@ -16,7 +17,11 @@ urlpatterns = [
 
     path('admindashboard', adminviews.admindashboard, name='admindashboard'),
 
+
 # teacher urls
+
+
+
 
 
 # student urls

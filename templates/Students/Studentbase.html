@@ -44,7 +44,7 @@
 
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-0 pb-5">
+        <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href=" {% static 'index.html' %} " class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>SCHOOLISH</h3>
@@ -60,54 +60,28 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href=" {% url 'admindashboard' %} " class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href=" {% static 'index.html' %} " class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-fill"></i>Teachers</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Teachers List</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">Add Teachers</a>
+                            <a href=" {% static 'button.html' %} " class="dropdown-item">Buttons</a>
+                            <a href=" {% static 'typography.html' %} " class="dropdown-item">Typography</a>
+                            <a href=" {% static 'element.html' %} " class="dropdown-item">Other Elements</a>
                         </div>
                     </div>
+                    <a href=" {% static 'widget.html' %} " class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href=" {% static 'form.html' %} " class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+                    <a href=" {% static 'table.html' %} " class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-people-fill"></i>Students</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Students List</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">Add Students</a>
+                            <a href=" {% static 'signin.html' %} " class="dropdown-item">Sign In</a>
+                            <a href=" {% static 'signup.html' %} " class="dropdown-item">Sign Up</a>
+                            <a href=" {% static '404.html' %} " class="dropdown-item">404 Error</a>
+                            <a href=" {% static 'blank.html' %} " class="dropdown-item">Blank Page</a>
                         </div>
                     </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-menu-button-wide-fill"></i>Course</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Add Course</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">View Course</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-book-half"></i>Subject</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Add Subjects</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">View Subjects</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-calendar2-fill"></i>Session</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Add Session</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">View Session</a>
-                        </div>
-                    </div>
-                    <a href=" {% static 'table.html' %} " class="nav-item nav-link"><i class="bi bi-person-lines-fill"></i>View Attendance</a>
-                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Leave Application</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'signin.html' %} " class="dropdown-item">Teachers Leave</a>
-                            <a href=" {% static 'signup.html' %} " class="dropdown-item">Students Leave</a>
-                        </div>
-                    </div>
-                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="bi bi-envelope-fill"></i>Teacher Feedback</a>
-                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="bi bi-envelope"></i>Student Feedback</a>
-                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="bi bi-box-arrow-in-left"></i>Logout</a>
-
                 </div>
             </nav>
         </div>
@@ -214,8 +188,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Teachers</p>
-                                <h6 class="mb-0">12</h6>
+                                <p class="mb-2">Today Sale</p>
+                                <h6 class="mb-0">$1234</h6>
                             </div>
                         </div>
                     </div>
@@ -223,8 +197,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Students</p>
-                                <h6 class="mb-0">100</h6>
+                                <p class="mb-2">Total Sale</p>
+                                <h6 class="mb-0">$1234</h6>
                             </div>
                         </div>
                     </div>
@@ -232,8 +206,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Departments</p>
-                                <h6 class="mb-0">5</h6>
+                                <p class="mb-2">Today Revenue</p>
+                                <h6 class="mb-0">$1234</h6>
                             </div>
                         </div>
                     </div>
