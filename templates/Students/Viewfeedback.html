@@ -1,0 +1,30 @@
+{% extends 'Students/Studentbase.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<h1 class="text-center">Feedbacks History</h1><br>
+<div class="col-xl-10 mx-auto">
+<table class="table table-info">
+  <thead>
+    <tr >
+      <th scope="col">SL.NO</th>
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Feedbacks</th>
+      <th scope="col">Reply</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <th scope="row">{{i.user}}</th>
+      <td>{{i.Date}}</td>
+      <td>{{i.Feedback}}</td>
+      <td>{{i.Reply}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

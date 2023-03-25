@@ -1,0 +1,32 @@
+{% extends 'Students/Studentbase.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<h1 class="text-center">Teachers List</h1><br>
+<div class="col-xl-10 mx-auto">
+<table class="table table-info">
+  <thead>
+    <tr >
+      <th scope="col">SL.NO</th>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Course</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td><img src="{{ i.Image.url }}" class="img-responsive rounded-circle" style="width:100px;height:100px; float: left; margin-right: 10px;" /></td>
+      <td>{{i.Name}}</td>
+      <td>{{i.Gender}}</td>
+      <td>{{i.Course}}</td>
+      <td>{{i.Email}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

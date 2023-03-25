@@ -44,7 +44,7 @@
 
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
+        <div class="sidebar pe-0 pb-5">
             <nav class="navbar bg-light navbar-light">
                 <a href=" {% static 'index.html' %} " class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>SCHOOLISH</h3>
@@ -56,32 +56,41 @@
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0">{{request.user}}</h6>
-                        <span>Admin</span>
+                        <span>Student</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href=" {% static 'index.html' %} " class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href=" {% url 'studentdashboard' %} " class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+<!--                    <div class="nav-item dropdown">-->
+<!--                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>-->
+<!--                        <div class="dropdown-menu bg-transparent border-0">-->
+<!--                            <a href=" {% static 'button.html' %} " class="dropdown-item">Buttons</a>-->
+<!--                            <a href=" {% static 'typography.html' %} " class="dropdown-item">Typography</a>-->
+<!--                            <a href=" {% static 'element.html' %} " class="dropdown-item">Other Elements</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <a href=" {% url 'stud_view_course' %} " class="nav-item nav-link"><i class="bi bi-menu-button-wide-fill"></i>Courses</a>
+                    <a href=" {% url 'stud_view_teachers' %} " class="nav-item nav-link"><i class="bi bi-person-fill"></i>Teachers List</a>
+                    <a href=" {% url 'stud_view_subjects' %} " class="nav-item nav-link"><i class="bi bi-book-half"></i>Subjects List</a>
+                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="bi bi-person-lines-fill"></i>View Attendance</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-envelope"></i>Feedbacks</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Buttons</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">Typography</a>
-                            <a href=" {% static 'element.html' %} " class="dropdown-item">Other Elements</a>
+                            <a href=" {% url 'stud_add_feedback' %} " class="dropdown-item">Add</a>
+                            <a href=" {% url 'stud_view_feedback' %} " class="dropdown-item">View</a>
+
                         </div>
                     </div>
-                    <a href=" {% static 'widget.html' %} " class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                    <a href=" {% static 'form.html' %} " class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href=" {% static 'table.html' %} " class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Leave Application</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'signin.html' %} " class="dropdown-item">Sign In</a>
-                            <a href=" {% static 'signup.html' %} " class="dropdown-item">Sign Up</a>
-                            <a href=" {% static '404.html' %} " class="dropdown-item">404 Error</a>
-                            <a href=" {% static 'blank.html' %} " class="dropdown-item">Blank Page</a>
+                            <a href=" {% static 'signin.html' %} " class="dropdown-item">Apply Leave</a>
+                            <a href=" {% static 'signup.html' %} " class="dropdown-item">View Status</a>
+
                         </div>
                     </div>
+                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="bi bi-box-arrow-in-left"></i>Log Out</a>
+
                 </div>
             </nav>
         </div>
@@ -180,7 +189,7 @@
             </nav>
             <!-- Navbar End -->
 
-
+            {% block content %}
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -188,8 +197,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Teachers</p>
+                                <h6 class="mb-0">12</h6>
                             </div>
                         </div>
                     </div>
@@ -197,8 +206,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Students</p>
+                                <h6 class="mb-0">100</h6>
                             </div>
                         </div>
                     </div>
@@ -206,8 +215,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Courses</p>
+                                <h6 class="mb-0">5</h6>
                             </div>
                         </div>
                     </div>
@@ -370,7 +379,7 @@
                 </div>
             </div>
             <!-- Widgets End -->
-
+            {% endblock %}
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

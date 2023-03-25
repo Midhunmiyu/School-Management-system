@@ -57,11 +57,9 @@ def signin(request):
             if user.is_staff:
                 return redirect('admindashboard')
             if user.is_teacher:
-                pass
-                # return redirect('Teacherdashboard')
+                return redirect('teacherdashboard')
             if user.is_student:
-                pass
-                # return redirect('Studentdashboard')
+                return redirect('studentdashboard')
 
         else:
             messages.info(request, 'Invalid Credentials')

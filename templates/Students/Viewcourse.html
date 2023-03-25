@@ -1,0 +1,28 @@
+{% extends 'Students/Studentbase.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<h1 class="text-center">Courses Available</h1><br>
+<div class="col-xl-10 mx-auto">
+<table class="table table-info">
+  <thead>
+    <tr >
+      <th scope="col">SL.NO</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.course_name}}</td>
+      <td>{{i.course_desc}}</td>
+      <td><a href="{% url 'delete_course' i.id %}"> <button type="button" class="btn btn-primary">DELETE</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

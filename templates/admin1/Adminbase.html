@@ -64,29 +64,28 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-fill"></i>Teachers</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Teachers List</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">Add Teachers</a>
+                            <a href=" {% url 'view_teachers' %} " class="dropdown-item">Teachers List</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-people-fill"></i>Students</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Students List</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">Add Students</a>
+                            <a href=" {% url 'view_students' %} " class="dropdown-item">Students List</a>
+                            <a href=" {% url 'add_students' %} " class="dropdown-item">Add Students</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-menu-button-wide-fill"></i>Course</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Add Course</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">View Course</a>
+                            <a href=" {% url 'add_course' %} " class="dropdown-item">Add Course</a>
+                            <a href=" {% url 'view_course' %} " class="dropdown-item">View Course</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-book-half"></i>Subject</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href=" {% static 'button.html' %} " class="dropdown-item">Add Subjects</a>
-                            <a href=" {% static 'typography.html' %} " class="dropdown-item">View Subjects</a>
+                            <a href=" {% url 'add_subject' %} " class="dropdown-item">Add Subjects</a>
+                            <a href=" {% url 'view_subjects' %} " class="dropdown-item">View Subjects</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -104,8 +103,8 @@
                             <a href=" {% static 'signup.html' %} " class="dropdown-item">Students Leave</a>
                         </div>
                     </div>
-                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="bi bi-envelope-fill"></i>Teacher Feedback</a>
-                    <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="bi bi-envelope"></i>Student Feedback</a>
+                    <a href=" {% url 'teacher_feedbacks' %} " class="nav-item nav-link"><i class="bi bi-envelope-fill"></i>Teacher Feedback</a>
+                    <a href=" {% url 'student_feedbacks' %} " class="nav-item nav-link"><i class="bi bi-envelope"></i>Student Feedback</a>
                     <a href=" {% static 'chart.html' %} " class="nav-item nav-link"><i class="bi bi-box-arrow-in-left"></i>Logout</a>
 
                 </div>
@@ -206,7 +205,7 @@
             </nav>
             <!-- Navbar End -->
 
-
+            {% block content %}
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -232,7 +231,7 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Departments</p>
+                                <p class="mb-2">Courses</p>
                                 <h6 class="mb-0">5</h6>
                             </div>
                         </div>
@@ -396,7 +395,7 @@
                 </div>
             </div>
             <!-- Widgets End -->
-
+            {% endblock %}
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

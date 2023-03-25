@@ -1,0 +1,24 @@
+{% extends 'admin1/adminbase.html' %}
+{%load crispy_forms_tags %}
+
+{% block content %}
+    <h1 class="text-center">Reply Student's Feedback</h1><hr><br>
+    <form method="post" class="col-md-11 px-5">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-control-label" >Name</label>
+        <input type="text" class="form-control" required readonly value="{{data.user}}">
+      </div>
+      <div class="mb-3">
+        <label class="form-control-label" >Feedback</label>
+        <input type="text" class="form-control" required readonly value="{{data.Feedback}}">
+      </div>
+      <div class="mb-3">
+        <label class="form-control-label" >Reply</label>
+        <textarea type="text" class="form-control" required name="Reply" rows="3"></textarea>
+
+      </div>
+      <button type="submit" class="btn btn-primary">Reply</button>
+    </form>
+
+{% endblock %}

@@ -36,7 +36,8 @@
 				{% for message in messages %}
 					{{message}}
 				{% endfor %}
-				<form class="login100-form validate-form" method="post">{% csrf_token %}
+				<form class="login100-form validate-form" method="post">
+					{% csrf_token %}
 
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>

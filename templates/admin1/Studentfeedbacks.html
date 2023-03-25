@@ -1,0 +1,56 @@
+{% extends 'admin1/Adminbase.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<h1 class="text-center">Student Feedbacks</h1><br>
+<div class="col-xl-10 mx-auto">
+<table class="table table-info">
+  <thead>
+    <tr >
+      <th scope="col">SL.NO</th>
+      <th scope="col">Date</th>
+      <th scope="col">Name</th>
+      <th scope="col">Feedbacks</th>
+      <th scope="col">Reply</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.Date}}</td>
+      <td>{{i.user}}</td>
+      <td>{{i.Feedback}}</td>
+      <td><a href="{% url 'reply_student_feedbacks' i.id %}"> <button type="button" class="btn btn-primary">Reply</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div><br><br>
+<hr>
+<br>
+<h1 class="text-center">Student Feedback History</h1><br>
+<div class="col-xl-10 mx-auto">
+<table class="table table-info">
+  <thead>
+    <tr >
+      <th scope="col">SL.NO</th>
+      <th scope="col">Date</th>
+      <th scope="col">Name</th>
+      <th scope="col">Feedbacks</th>
+      <th scope="col">Reply</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.Date}}</td>
+      <td>{{i.user}}</td>
+      <td>{{i.Feedback}}</td>
+      <td>{{i.Reply}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock%}

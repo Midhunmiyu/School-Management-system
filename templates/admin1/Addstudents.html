@@ -1,0 +1,54 @@
+{% extends 'admin1/Adminbase.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card-body card-block">
+            <form method="post">{% csrf_token %}
+                <div class="form-group">
+                    <label class=" form-control-label"> Student Name</label>
+                    <input  type="text"  class="form-control" value="">
+
+                </div>
+                 <div class="form-group">
+                    <label class=" form-control-label">Username</label>
+                    <input type="text" required  class="form-control" value="">
+
+                </div>
+                <div class="form-group">
+                    <label class=" form-control-label">Gender</label>
+                    <input  required  class="form-control"  value="">
+
+                </div>
+                <div class="form-group">
+                    <label class=" form-control-label">Course</label>
+                    <input  type="text" required  class="form-control"  value="">
+
+                </div>
+                <div class="form-group">
+                    <label  class=" form-control-label">Email</label>
+                    <input  type="emal" required  class="form-control"  value="">
+
+                </div>
+                <div class="form-group">
+                    <label  class=" form-control-label">Image</label>
+                    <input  type="image" required  class="form-control"  value="">
+
+                </div>
+                <div class="form-group">
+                    <label  class=" form-control-label">Password</label>
+                    <input  type="password" required  class="form-control"  value="">
+
+                </div>
+                <div class="form-group">
+                    <label  class=" form-control-label">Confirm Password</label>
+                    <input  type="password" required  class="form-control"  value="">
+
+                </div>
+                <br>
+                <div class="form-actions form-group ">
+                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                </div>
+
+            </form>
+</div>
+
+{% endblock %}
